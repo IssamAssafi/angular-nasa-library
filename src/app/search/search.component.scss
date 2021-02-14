@@ -54,15 +54,21 @@
         border-radius: 20px;
         margin:1em;
         cursor:pointer;
-    
-        img{
-            width:100%;
+        
+        .card-upper{
             height: 170px;
-            box-shadow: 0px 0px 130px 0 rgb(0 0 0 / 20%);
+            overflow: hidden;
+            width: 100%;
             border-radius:20px 20px 0px 0px;
-            background-size:cover;
+
+            img{
+                box-shadow: 0px 0px 130px 0 rgb(0 0 0 / 20%);
+                max-width: 120%;
+                min-height: 100%;
+            }
+        
         }
-    
+
         .text-container {
             padding: 2px 16px;
     

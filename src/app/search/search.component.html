@@ -13,7 +13,8 @@
 <div *ngIf="medias.length" class="media-container">
     <h1>Results</h1>
     <div *ngFor="let media of medias" [routerLink]="['/asset', media.nasa_id]" [state]="{ data: {type:media.media_type}}" class="card">
-        <img src="{{media.thumbnail}}" alt="">
+        <div class="card-upper"><img src="{{media.thumbnail}}" alt=""></div>
+
         <div class="text-container">
           <div  class="title">{{ media.title }}</div>
           <p>{{ media.description }}</p> 
