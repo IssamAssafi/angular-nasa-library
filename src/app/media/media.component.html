@@ -1,0 +1,16 @@
+<div class="container">
+
+    <button (click)=goBack()>⮨ Return to search page</button>
+
+    <ng-template [ngIf]="type === 'image'" [ngIfElse]="none">
+        <img src={{getMediaURL()}} alt="">
+    </ng-template>
+    
+    <ng-template #none>
+        <video width="100%" controls>
+            <source src={{getMediaURL()}} type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+    </ng-template>
+    
+</div>

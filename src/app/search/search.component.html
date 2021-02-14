@@ -1,0 +1,35 @@
+<h1>Search</h1>
+
+<div class="wrap">
+  <div class="search">
+     <input matInput type="text" [(ngModel)]="searchword" (keyup.enter)="onEnter()" class="searchTerm" placeholder="What are you looking for?">
+     <button (click)="onEnter()" type="submit" class="searchButton">
+      ➜
+    </button>
+  </div>
+</div>
+
+
+<div *ngIf="medias.length" class="media-container">
+    <h1>Results</h1>
+    <div *ngFor="let media of medias" [routerLink]="['/asset', media.nasa_id]" [state]="{ data: {type:media.media_type}}" class="card">
+        <img src="{{media.thumbnail}}" alt="">
+        <div class="text-container">
+          <div  class="title">{{ media.title }}</div>
+          <p>{{ media.description }}</p> 
+
+          <div class="card-footer">
+            <span><b>Type : </b>{{media.media_type}}</span>
+            <a href="{{'/asset/'+media.nasa_id}}" (click)=onClick($event)>View</a>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+<div *ngIf="receivedNoResults" class="media-container">
+  <h1>No Results</h1>
+</div>
+
+
+
